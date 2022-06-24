@@ -1,7 +1,16 @@
 local M = {}
 
+local lsp = require('lspconfig')
+
 function M.setup()
-	require('lspconfig').sumneko_lua.setup {}
+	lsp.sumneko_lua.setup {
+		settings = {
+			Lua = {
+				diagnostics = {
+					globals = { 'vim' },
+				},
+			},
+		}, }
 end
 
 return M
