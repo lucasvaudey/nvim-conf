@@ -19,12 +19,11 @@ return require('packer').startup(function(use)
 		},
 		tag = 'nightly' -- optional, updated every week. (see issue #1193)
 	}
-	use 'wbthomason/packer.nvim' -- Package manager
 	use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
 	-- BufferLine
 	use { 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons' }
 	-- Flutter nvim
-	use { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim', config = require("flutter-tools").setup {} }
+	-- use { 'akinsho/flutter-tools.nvim', requires = 'nvim-lua/plenary.nvim', config = require("flutter-tools").setup {} }
 	use { 'glepnir/lspsaga.nvim' }
 	-- CMP
 	use 'hrsh7th/cmp-nvim-lsp'
@@ -37,4 +36,5 @@ return require('packer').startup(function(use)
 	-- VSNIP
 	use 'hrsh7th/cmp-vsnip'
 	use 'hrsh7th/vim-vsnip'
+	use 'folke/tokyonight.nvim'
 end)

@@ -23,13 +23,14 @@ function M.setup()
 	M.map('n', "<C-g>", ":lua require'dap'.toggle_breakpoint()<cr>")
 	M.map('n', "<C-c>", ":lua require'dap'.continue()<cr>")
 	-- Create a terminal
-	M.map('n', '<C-q>', ':belowright split | te<cr>')
+	M.map('n', '<C-q>', 'te<cr>')
 	-- Moving window !
 	M.map('n', '<C-j>', '<C-w>j')
 	M.map('n', '<C-h>', '<C-w>h')
 	M.map('n', '<C-k>', '<C-w>k')
 	M.map('n', '<C-l>', '<C-w>l')
-	-- lsp remap
+	-- Close buffer
+	M.map('n', '<C-x>', ':bd!<cr>')
 	-- M.map('n','gd',":Lspsaga lsp_finder<cr>")
 	M.map('n', ',', ':lua vim.lsp.buf.code_action()<cr>')
 	M.map('n', 'gd', ':lua vim.lsp.buf.definition()<cr>')
@@ -37,7 +38,7 @@ function M.setup()
 	M.map('n', '<S-l>', ':BufferLineCycleNext<cr>')
 	M.map('n', '<S-h>', ':BufferLineCyclePrev<cr>')
 	-- setup auto foramat with lsp
-	vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+	--vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
 
 end
 
